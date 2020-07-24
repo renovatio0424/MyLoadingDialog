@@ -1,4 +1,4 @@
 # MyLoadingDialog
 
 ## Desc 
-This App is a practive app
+This app is for practicing dialog creation.

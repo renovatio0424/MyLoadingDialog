@@ -9,7 +9,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val dialog = LoadingDialog(this)
-        dialog.setTime(5 * 1000)
         dialog.show()
     }
 }

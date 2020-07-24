@@ -19,13 +19,15 @@ import androidx.annotation.NonNull;
 public class LoadingDialog extends Dialog {
 
     private long time = 0;
-    ProgressBar progressBar = findViewById(R.id.progressBar);
-
     public LoadingDialog(@NonNull Context context) {
         super(context);
         setContentView(R.layout.loading_dialog);
         setCancelable(true);
         setCanceledOnTouchOutside(true);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    }
+
+    public void setTime(long time){
+        time = this.time;
     }
 }

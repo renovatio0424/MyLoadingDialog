@@ -2,6 +2,10 @@ package com.reno.myloadingdialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Handler;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 
@@ -14,10 +18,14 @@ import androidx.annotation.NonNull;
  * */
 public class LoadingDialog extends Dialog {
 
+    private long time = 0;
+    ProgressBar progressBar = findViewById(R.id.progressBar);
+
     public LoadingDialog(@NonNull Context context) {
         super(context);
-        setCancelable(false);
-        setCanceledOnTouchOutside(false);
         setContentView(R.layout.loading_dialog);
+        setCancelable(true);
+        setCanceledOnTouchOutside(true);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 }

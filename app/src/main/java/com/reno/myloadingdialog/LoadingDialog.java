@@ -4,9 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Handler;
-import android.util.Log;
-import android.widget.ProgressBar;
+import android.view.Window;
 
 import androidx.annotation.NonNull;
 
@@ -18,12 +16,15 @@ import androidx.annotation.NonNull;
  * 3. kotlin 으로 바꿔보기
  */
 public class LoadingDialog extends Dialog {
-    
+
     public LoadingDialog(@NonNull Context context) {
         super(context);
         setContentView(R.layout.loading_dialog);
         setCancelable(true);
         setCanceledOnTouchOutside(true);
-        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Window window = getWindow();
+        if (window != null) {
+            window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
     }
 }

@@ -14,20 +14,6 @@ import android.graphics.drawable.ColorDrawable
  * 3. kotlin 으로 바꿔보기
  */
 
-//public class LoadingDialog extends Dialog {
-//
-//    public LoadingDialog(@NonNull Context context) {
-//        super(context);
-//        setContentView(R.layout.loading_dialog);
-//        setCancelable(true);
-//        setCanceledOnTouchOutside(true);
-//        Window window = getWindow();
-//        if (window != null) {
-//            window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//        }
-//    }
-//}
-
 class LoadingDialog(context: Context) : Dialog(context) {
 
     init {

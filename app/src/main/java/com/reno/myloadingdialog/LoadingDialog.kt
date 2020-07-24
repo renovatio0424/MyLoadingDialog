@@ -1,5 +1,10 @@
 package com.reno.myloadingdialog
 
+import android.app.Dialog
+import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+
 /**
  * TODO
  *
@@ -8,14 +13,30 @@ package com.reno.myloadingdialog
  * 2. 다이얼 로그 화면의 바깥을 클릭했을 경우 꺼지는 기능 (cancelable) 을 추가 해보기
  * 3. kotlin 으로 바꿔보기
  */
-class LoadingDialog(@NonNull context: Context?) : Dialog(context) {
+
+//public class LoadingDialog extends Dialog {
+//
+//    public LoadingDialog(@NonNull Context context) {
+//        super(context);
+//        setContentView(R.layout.loading_dialog);
+//        setCancelable(true);
+//        setCanceledOnTouchOutside(true);
+//        Window window = getWindow();
+//        if (window != null) {
+//            window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//        }
+//    }
+//}
+
+class LoadingDialog(context: Context) : Dialog(context) {
+
     init {
         setContentView(R.layout.loading_dialog)
         setCancelable(true)
         setCanceledOnTouchOutside(true)
-        val window: Window = getWindow()
-        if (window != null) {
-            window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        val window = window?.apply {
+            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }
     }
+
 }

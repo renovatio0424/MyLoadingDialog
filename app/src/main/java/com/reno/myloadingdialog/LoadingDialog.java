@@ -30,4 +30,19 @@ public class LoadingDialog extends Dialog {
     public void setTime(long time){
         time = this.time;
     }
+
+    public void show() {
+        super.show();
+        ProgressBar progressBar = findViewById(R.id.progressBar);
+        progressBar.setIndeterminate(true);
+        progressBar.setMax(100000);
+
+        if (time > 0) {
+            new Handler().postDelayed(new Runnable() {
+                public void run() {
+                    dismiss();
+                }
+            }, time);
+        }
+    }
 }

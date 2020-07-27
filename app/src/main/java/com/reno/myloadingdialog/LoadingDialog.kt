@@ -20,9 +20,7 @@ class LoadingDialog(context: Context) : Dialog(context) {
         setContentView(R.layout.loading_dialog)
         setCancelable(true)
         setCanceledOnTouchOutside(true)
-        val window = window?.apply {
-            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        }
+        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
 }
